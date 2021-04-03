@@ -8,7 +8,7 @@
   tasks:
   - name: Create a directory for anonymously accessible files
     file:
-      path: /srv/ftp
+      path: /opt/docker/proftpd-anon/ftp
       state: directory
 
   # ProFTPd runs on the actual network interface (network_mode: host)
@@ -25,4 +25,4 @@
       restart_policy: unless-stopped
       network_mode: host
       volumes:
-      - /srv/ftp:/srv/ftp
+      - /opt/docker/proftpd-anon:/srv/ftp
